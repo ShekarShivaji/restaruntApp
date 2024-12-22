@@ -1,0 +1,258 @@
+.dishes {
+  width: 95%;
+  min-height: 200px;
+  box-shadow: 0px 0px 2px 0px;
+  list-style-type: none;
+  align-self: center;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.dishesDetailsContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.dishTypeContainer {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+  .dishTypeContainer {
+    width: 50px;
+    height: 30px;
+    padding: 5px;
+  }
+}
+
+.type {
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+}
+
+@media screen and (max-width: 1024px) {
+  .type {
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.type1 {
+  background-color: #a90b0b;
+}
+
+.type2 {
+  background-color: #129332;
+}
+
+.dishtype1 {
+  border: 1px solid #a90b0b;
+  color: #a90b0b;
+}
+
+.dishtype2 {
+  border: 1px solid #129332;
+  color: #129332;
+}
+
+.dishSpesification {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  width: 800px;
+}
+
+@media screen and (max-width: 728px) {
+  .dishSpesification {
+    width: 500px;
+  }
+}
+
+.dishname {
+  font-size: 23px;
+  margin-top: -6px;
+}
+
+@media screen and (max-width: 728px) {
+  .dishname {
+    font-size: 18px;
+    margin-top: -6px;
+  }
+}
+
+.countContainer {
+  width: 90px;
+  height: 40px;
+  background-color: #129332;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+@media screen and (max-width: 426px) {
+  .countContainer {
+    width: 50px;
+    height: 25px;
+    border-radius: 15px;
+  }
+}
+
+.count {
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-weight: 700;
+}
+
+@media screen and (max-width: 426px) {
+  .count {
+    font-size: 10px;
+  }
+}
+
+.ifdishAvailable {
+  display: none;
+}
+
+.ifdishNotAvailabel {
+  display: none;
+}
+
+.caloriesContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+}
+
+@media screen and (max-width: 426px) {
+  .dishImg {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.calories {
+  font-family: Roboto;
+  color: #f7b51b;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 426px) {
+  .calories {
+    font-size: 11px;
+  }
+}
+
+.currency {
+  font-family: Roboto;
+  color: #454545;
+  font-weight: 600;
+  margin-bottom: -2px;
+  margin-top: -2px;
+}
+
+@media screen and (max-width: 426px) {
+  .currency {
+    font-size: 10px;
+  }
+}
+
+.dishDescription {
+  color: #a69e9e;
+  font-family: Roboto;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 426px) {
+  .dishDescription {
+    font-size: 10px;
+  }
+}
+
+.notAvailable {
+  color: #de1616;
+}
+
+@media screen and (max-width: 426px) {
+  .notAvailable {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .plus {
+    font-size: 10px;
+  }
+}
+
+.dishImgCategory {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.dishImg {
+  height: 200px;
+  width: 200px;
+  border-radius: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .dishImg {
+    width: 150px;
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .dishImg {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.minusButton {
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.plusButton {
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.ifCustamisationNotAvailable {
+  display: none;
+}
+
+.custom {
+  color: #266eda;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 426px) {
+  .custom {
+    font-size: 12px;
+  }
+}
