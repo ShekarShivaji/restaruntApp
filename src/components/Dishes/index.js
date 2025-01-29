@@ -1,77 +1,79 @@
-import './index.css'
-import {useState} from 'react'
+import {useState, useContext} from 'react'
 
-const Dishes = props => {
-  const {each, countingCartPlus, countingCartMinus} = props
-  const [score, setScore] = useState(0)
+import CartContext from '../../context/CartContext'
+
+import './index.css'
+
+const DishItem = ({dishDetails}) => {
   const {
-    dishAvailability,
-    dishCalories,
+    dishName,
+    dishType,
+    dishPrice,
     dishCurrency,
     dishDescription,
-    dishId,
     dishImage,
-    dishName,
-    dishPrice,
-    dishType,
+    dishCalories,
     addonCat,
-  } = each
-  const addonCatLen = addonCat.length > 1 ? 'Customizations available' : ''
-  const onclickDishMinusButton = () => {
-    setScore(prevState => prevState - 1)
-    countingCartMinus(dishId)
-  }
-  const onclickDishPlusButton = () => {
-    setScore(prevState => prevState + 1)
-    countingCartPlus(dishId)
-  }
-  const disable = score === 0
-  const isdishAvailable = dishAvailability === true ? '' : 'ifdishNotAvailabel'
-  const ifdishNotAvailable = dishAvailability === false ? 'Not available' : ''
-  const dishtypeBorder = dishType === 1 ? 'dishtype1' : 'dishtype2'
-  const dishtype = dishType === 1 ? 'type1' : 'type2'
-  return (
-    <li className="dishes">
-      <div className="dishesDetailsContainer">
-        <div className={`dishTypeContainer ${dishtypeBorder}`}>
-          <div className={`type ${dishtype}`} />
-        </div>
-        <div className="dishSpesification">
-          <h1 className="dishname">{dishName}</h1>
-          <p className="currency">
-            {dishCurrency} {dishPrice}
-          </p>
-          <p className="dishDescription">{dishDescription}</p>
-          <div className={`countContainer ${isdishAvailable}`}>
-            <button
-              onClick={onclickDishMinusButton}
-              disabled={disable}
-              className="minusButton"
-              type="button"
-            >
-              -
-            </button>
-            <p className="count">{score}</p>
+    dishAvailability,
+  } = dishDetails
 
-            <button
-              type="button"
-              onClick={onclickDishPlusButton}
-              className="plusButton"
-            >
-              +
-            </button>
-          </div>
-          <p className="notAvailable">{ifdishNotAvailable}</p>
-          <p className="custom">{addonCatLen}</p>
-        </div>
-        <div className="caloriesContainer">
-          <p className="calories">{dishCalories} calories</p>
-        </div>
-        <div className="dishImgCategory" />
-        <img src={dishImage} alt={dishName} className="dishImg" />
+  const [quantity, setQuantity] = useState(0)
+  const {addCartItem} = useContext(CartContext)
+
+  const onIncreaseQuantity = () => setQuantity(prevState => prevState + 1)
+
+  const onDecreaseQuantity = () =>
+    setQuantity(prevState => (prevState > 0 ? prevState - 1 : 0))
+
+  const onAddItemToCart = () => addCartItem({...dishDetails, quantity})
+
+  const renderControllerButton = () => (
+    <div className="controller-container">
+      <button className="button" type="button" onClick={onDecreaseQuantity}>
+        -
+      </button>
+      <p className="quantity">{quantity}</p>
+      <button className="button" type="button" onClick={onIncreaseQuantity}>
+        +
+      </button>
+    </div>
+  )
+
+  return (
+    <li className="dish-item-container">
+      <div
+        className={`veg-border ${dishType === 1 ? 'non-veg-border' : ''} me-3`}
+      >
+        <div className={`veg-round ${dishType === 1 ? 'non-veg-round' : ''}`} />
       </div>
+      <div className="dish-details-container">
+        <h1 className="dish-name">{dishName}</h1>
+        <p className="dish-currency-price">
+          {dishCurrency} {dishPrice}
+        </p>
+        <p className="dish-description">{dishDescription}</p>
+        {dishAvailability && renderControllerButton()}
+        {!dishAvailability && (
+          <p className="not-availability-text">Not available</p>
+        )}
+        {addonCat.length !== 0 && (
+          <p className="addon-availability-text">Customizations available</p>
+        )}
+        {quantity > 0 && (
+          <button
+            type="button"
+            className="btn btn-outline-primary mt-3 add-to-cart-button"
+            onClick={onAddItemToCart}
+          >
+            ADD TO CART
+          </button>
+        )}
+      </div>
+
+      <p className="dish-calories text-warning">{dishCalories} calories</p>
+      <img className="dish-image" alt={dishName} src={dishImage} />
     </li>
   )
 }
 
-export default Dishes
+export default DishItem

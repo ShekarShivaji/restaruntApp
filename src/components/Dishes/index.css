@@ -1,258 +1,126 @@
-.dishes {
-  width: 95%;
-  min-height: 200px;
-  box-shadow: 0px 0px 2px 0px;
-  list-style-type: none;
-  align-self: center;
-  margin-top: 20px;
+.dish-item-container {
+  border: 1px solid gray;
+  border-radius: 12px;
+  justify-content: space-between;
+  display: flex;
   padding: 20px;
+  margin-bottom: 20px;
 }
 
-.dishesDetailsContainer {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  width: 100%;
-  justify-content: space-around;
+.veg-border {
+  border: 1px solid #00923f;
+  align-self: flex-start;
 }
 
-.dishTypeContainer {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.non-veg-border {
+  border: 1px solid #92282a;
 }
 
-@media screen and (max-width: 768px) {
-  .dishTypeContainer {
-    width: 50px;
-    height: 30px;
-    padding: 5px;
-  }
-}
-
-.type {
-  border-radius: 50%;
-  width: 25px;
+.veg-round {
   height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  background-color: #00923f;
+  margin: 5px;
 }
 
-@media screen and (max-width: 1024px) {
-  .type {
-    border-radius: 50%;
-    width: 18px;
-    height: 18px;
-  }
+.non-veg-round {
+  background-color: #92282a;
 }
 
-.type1 {
-  background-color: #a90b0b;
+.dish-details-container {
+  flex-grow: 1;
 }
 
-.type2 {
-  background-color: #129332;
-}
-
-.dishtype1 {
-  border: 1px solid #a90b0b;
-  color: #a90b0b;
-}
-
-.dishtype2 {
-  border: 1px solid #129332;
-  color: #129332;
-}
-
-.dishSpesification {
-  display: flex;
-  flex-direction: column;
-  margin-left: 10px;
-  width: 800px;
-}
-
-@media screen and (max-width: 728px) {
-  .dishSpesification {
-    width: 500px;
-  }
-}
-
-.dishname {
-  font-size: 23px;
-  margin-top: -6px;
-}
-
-@media screen and (max-width: 728px) {
-  .dishname {
-    font-size: 18px;
-    margin-top: -6px;
-  }
-}
-
-.countContainer {
-  width: 90px;
-  height: 40px;
-  background-color: #129332;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-@media screen and (max-width: 426px) {
-  .countContainer {
-    width: 50px;
-    height: 25px;
-    border-radius: 15px;
-  }
-}
-
-.count {
-  color: #ffffff;
+.dish-name {
+  font-weight: 600;
   font-family: 'Roboto';
-  font-weight: 700;
+  font-size: 25px;
+  margin-top: 0;
 }
 
-@media screen and (max-width: 426px) {
-  .count {
-    font-size: 10px;
-  }
+.dish-currency-price {
+  color: #525252;
+  font-weight: 600;
+  font-family: 'Roboto';
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
-.ifdishAvailable {
-  display: none;
+.dish-description {
+  color: #bfc3c7;
+  font-weight: 500;
+  font-family: 'Roboto';
+  font-size: 16px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
-.ifdishNotAvailabel {
-  display: none;
-}
-
-.caloriesContainer {
+.controller-container {
+  width: fit-content;
+  min-width: 150px;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 50px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  width: 200px;
-  height: 200px;
+  background-color: #00923f;
 }
 
-@media screen and (max-width: 426px) {
-  .dishImg {
-    width: 50px;
-    height: 50px;
-  }
-}
-
-.calories {
-  font-family: Roboto;
-  color: #f7b51b;
-  font-weight: 700;
-}
-
-@media screen and (max-width: 426px) {
-  .calories {
-    font-size: 11px;
-  }
-}
-
-.currency {
-  font-family: Roboto;
-  color: #454545;
-  font-weight: 600;
-  margin-bottom: -2px;
-  margin-top: -2px;
-}
-
-@media screen and (max-width: 426px) {
-  .currency {
-    font-size: 10px;
-  }
-}
-
-.dishDescription {
-  color: #a69e9e;
-  font-family: Roboto;
-  font-weight: 400;
-}
-
-@media screen and (max-width: 426px) {
-  .dishDescription {
-    font-size: 10px;
-  }
-}
-
-.notAvailable {
-  color: #de1616;
-}
-
-@media screen and (max-width: 426px) {
-  .notAvailable {
-    font-size: 12px;
-  }
-}
-
-@media screen and (max-width: 426px) {
-  .plus {
-    font-size: 10px;
-  }
-}
-
-.dishImgCategory {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  align-items: flex-end;
-  justify-content: flex-start;
-}
-
-.dishImg {
-  height: 200px;
-  width: 200px;
-  border-radius: 10px;
-}
-
-@media screen and (min-width: 768px) {
-  .dishImg {
-    width: 150px;
-    height: 200px;
-  }
-}
-
-@media screen and (max-width: 426px) {
-  .dishImg {
-    width: 100px;
-    height: 100px;
-  }
-}
-
-.minusButton {
+.button {
+  padding: 5px;
   background-color: transparent;
   border: none;
-  color: #ffffff;
-  font-size: 15px;
+  outline: none;
+  cursor: pointer;
+  color: #fff;
   font-weight: 600;
+  font-size: 18px;
 }
 
-.plusButton {
-  background-color: transparent;
-  border: none;
-  color: #ffffff;
-  font-size: 15px;
-  font-weight: 600;
+.quantity {
+  margin: 0 10px;
+  color: #fff;
+  font-size: 18px;
 }
 
-.ifCustamisationNotAvailable {
-  display: none;
+.not-availability-text {
+  font-weight: 500;
+  font-size: 18px;
+  margin: 5px 0;
+  color: #92282a;
 }
 
-.custom {
-  color: #266eda;
-  font-weight: 600;
+.addon-availability-text {
+  font-weight: 500;
+  font-size: 18px;
+  margin: 5px 0;
+  color: #734ff4;
+  margin-bottom: 0;
 }
 
-@media screen and (max-width: 426px) {
-  .custom {
-    font-size: 12px;
-  }
+.dish-calories {
+  min-width: 150px;
+  max-width: 250px;
+  font-weight: 500;
+  font-family: 'Roboto';
+  font-size: 18px;
+  align-self: center;
+}
+
+.dish-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 12px;
+  align-self: flex-start;
+}
+
+.add-to-cart-button {
+  background-color: #4f78f4;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  border: #4f78f4 solid 1px;
+  margin-top: 5px;
 }
